@@ -226,3 +226,23 @@ button {cursor: pointer}
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+.top-button {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  background-image: url("../img/5791454.png");
+  background-size: contain;
+
+  cursor: pointer;
+}

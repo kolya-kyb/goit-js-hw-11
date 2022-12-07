@@ -17,6 +17,7 @@ const refs = {
   form: document.querySelector('.search-form'),
   loadMoreBtn: document.querySelector('.load-more'),
   wrapperbtn: document.querySelector('.button-wrapper'),
+  topButton: document.querySelector('.top-button'),
 };
 
 let searchValue = '';
@@ -26,6 +27,17 @@ let perPage = 40;
 
 refs.form.addEventListener('submit', handelSubmit);
 refs.loadMoreBtn.addEventListener('click', handleLoadMoreBtn);
+refs.topButton.addEventListener('click', e => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth',
+  });
+  // window.scrollBy(0, 0, {
+  //   behavior: 'smooth',
+});
+
 invisibleBtn();
 
 function handleLoadMoreBtn() {
