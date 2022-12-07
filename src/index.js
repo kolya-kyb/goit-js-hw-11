@@ -73,6 +73,7 @@ async function searchResult() {
     return photo;
   } catch (error) {
     Notify.failure('Opps, please try again');
+    Loading.remove();
   }
 }
 
