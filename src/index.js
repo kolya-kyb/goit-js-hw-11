@@ -81,6 +81,7 @@ async function updateGallery() {
   Loading.circle();
   let photo = await searchResult();
   if (photo.length === 0) {
+    Loading.remove();
     return Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
