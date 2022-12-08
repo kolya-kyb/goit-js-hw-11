@@ -113,8 +113,7 @@ function invisibleBtn() {
 
 function visibleBtn() {
   let totalNumberPage = Math.ceil(totalhits / perPage);
-  console.log(totalNumberPage);
-  console.log(numberPage);
+
   if (totalNumberPage === numberPage) {
     invisibleBtn();
     return Notify.info('All results are displayed');
