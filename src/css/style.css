@@ -84,13 +84,13 @@ img {
 
 
 .form-wrapper{ 
+  padding-top: 30px;
   margin-bottom: 30px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100vw;
-	height: 25vh;
+	
 }
 h1 { font-weight: var(--font-bold) }
 
