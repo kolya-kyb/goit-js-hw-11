@@ -34,22 +34,17 @@ refs.topButton.addEventListener('click', e => {
     left: 0,
     behavior: 'smooth',
   });
-  // window.scrollBy(0, 0, {
-  //   behavior: 'smooth',
+});
+
+window.addEventListener('scroll', () => {
+  scrollY > 200
+    ? refs.topButton.classList.remove('invisible')
+    : refs.topButton.classList.add('invisible');
 });
 
 invisibleBtn();
 
 function handleLoadMoreBtn() {
-  let totalNumberPage = Math.ceil(totalhits / perPage);
-  console.log(totalNumberPage);
-  if (totalNumberPage === numberPage) {
-    invisibleBtn();
-    return Notify.info(
-      "We're sorry, but you've reached the end of search results.",
-      { closeButton: true }
-    );
-  }
   numberPage += 1;
   updateGallery();
 }
@@ -65,7 +60,8 @@ function handelSubmit(e) {
     elements: { searchQuery },
   } = e.currentTarget;
 
-  if (searchQuery.value === '') {
+  if (searchQuery.value.trim() === '') {
+    refs.form.reset();
     return Notify.info('Please fill in all the fields!');
   }
 
@@ -116,5 +112,12 @@ function invisibleBtn() {
 }
 
 function visibleBtn() {
+  let totalNumberPage = Math.ceil(totalhits / perPage);
+  console.log(totalNumberPage);
+  console.log(numberPage);
+  if (totalNumberPage === numberPage) {
+    invisibleBtn();
+    return Notify.info('All results are displayed');
+  }
   refs.wrapperbtn.classList.remove('invisible');
 }

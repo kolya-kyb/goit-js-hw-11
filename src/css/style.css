@@ -8,7 +8,9 @@
 	--font-bold: 700;
 	--font-regular: 400;
 }
-
+html {
+  behavior: smooth;
+}
 
 .list {
     margin: 0;
